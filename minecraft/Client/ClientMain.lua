@@ -1,3 +1,6 @@
+local data = {};
+data.gui = {};
+
 function Start()
     showChat(false);
     fadeCamera(true, 0);
@@ -6,8 +9,10 @@ function Start()
 
     setCameraTarget(getLocalPlayer());
     
-    local test = Vector:create(0, 5);
-    local testChunk = Chunk:create();
+    --local test = Vector:create(0, 5);
+    --local testChunk = Chunk:create();
+
+    data.gui.inventory = GuiInventory:Create();
 
     addEventHandler("onClientPreRender", getRootElement(), PreUpdate);
     addEventHandler("onClientRender", getRootElement(), Update);
@@ -22,4 +27,8 @@ end
 
 function Update()
 
+end
+
+function SetGameInventory(player)
+    data.gui.inventory.playerInventory = player.inventory;
 end

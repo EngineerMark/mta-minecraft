@@ -5,9 +5,8 @@ ServerPlayer.list = {};
 addEvent("requestClientSyncPlayer", true);
 
 function ServerPlayer:Create(element)
-    local player = setmetatable({}, ServerPlayer);
-    player.internalPlayer = element;
-
+    local player = Player:Create(element);
+    setmetatable(player, ServerPlayer);
 
     return player;
 end
@@ -19,11 +18,16 @@ function ServerPlayer:Spawn()
     end, 100, 1);
 end
 
-setmetatable(ServerPlayer, {__index = Player});
-
 function InternalRequestClientSyncPlayer()
-    local sPlayer = ServerPlayer.list[source];
+    local sPlayer = ServerPlayer.list[client];
     print("Player "..getPlayerName(sPlayer.internalPlayer).." requested server to client sync");
     triggerClientEvent(sPlayer.internalPlayer, "syncPlayerToClient", resourceRoot, sPlayer);
 end
 addEventHandler("requestClientSyncPlayer", getRootElement(), InternalRequestClientSyncPlayer);
+
+function InternalSyncPlayerToServer(cPlayer)
+    local sPlayer = ServerPlayer.list[client];
+    print("Player "..getPlayerName(sPlayer.internalPlayer).." synced client to server");
+    sPlayer.inventory = cPlayer.inventory;
+end
+addEventHandler("syncPlayerToServer", getRootElement(), InternalSyncPlayerToServer);

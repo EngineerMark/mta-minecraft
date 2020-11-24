@@ -4,7 +4,7 @@ Vector.__index = Vector;
 local kEpsilon = 0.00001;
 local kEpsilonNormalSqrt = 1e-15;
 
-function Vector:create(x, y, z)
+function Vector:Create(x, y, z)
     local v = setmetatable({}, Vector);
 
     v.size = 1;
