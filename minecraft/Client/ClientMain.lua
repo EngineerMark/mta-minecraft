@@ -13,6 +13,9 @@ function Start()
     --local testChunk = Chunk:create();
 
     data.gui.inventory = GuiInventory:Create(ScreenResolution);
+    data.gui.inventory.visible = true;
+
+    bindKey(g_bindings["inventory"], "down", function() data.gui.inventory.visible = not data.gui.inventory.visible; end);
 
     addEventHandler("onClientPreRender", getRootElement(), PreUpdate);
     addEventHandler("onClientRender", getRootElement(), Update);
@@ -22,10 +25,11 @@ end
 addEventHandler("onClientResourceStart", resourceRoot, Start);
 
 function PreUpdate(msTime)
+    data.gui.inventory:Update();
 end
 
 function Update()
-
+    data.gui.inventory:Draw();
 end
 
 function SetGameInventory(player)

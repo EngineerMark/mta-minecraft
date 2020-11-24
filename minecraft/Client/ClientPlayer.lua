@@ -12,8 +12,6 @@ function ClientPlayer:Create(element)
     return player;
 end
 
-setmetatable(ClientPlayer, {__index = Player});
-
 -- Triggered from server, to give player data to the client player
 -- Useful for loading data from database and giving it to the client
 function InternalSyncPlayerToClient(player)
