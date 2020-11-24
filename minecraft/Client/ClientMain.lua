@@ -12,7 +12,7 @@ function Start()
     --local test = Vector:create(0, 5);
     --local testChunk = Chunk:create();
 
-    data.gui.inventory = GuiInventory:Create();
+    data.gui.inventory = GuiInventory:Create(ScreenResolution);
 
     addEventHandler("onClientPreRender", getRootElement(), PreUpdate);
     addEventHandler("onClientRender", getRootElement(), Update);
@@ -22,7 +22,6 @@ end
 addEventHandler("onClientResourceStart", resourceRoot, Start);
 
 function PreUpdate(msTime)
-
 end
 
 function Update()
