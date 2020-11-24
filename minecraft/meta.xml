@@ -13,6 +13,7 @@
     <script src="Server/server_main.lua" type="server" cache="false" />
     <script src="Server/server_chat.lua" type="server" cache="false" />
 
+    <script src="Client/client_player.lua" type="client" cache="false" />
     <script src="Client/client_main.lua" type="client" cache="false" />
     <script src="Client/client_chat.lua" type="client" cache="false" />
 </meta>

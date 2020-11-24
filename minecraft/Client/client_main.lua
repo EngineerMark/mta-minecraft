@@ -11,6 +11,8 @@ function Start()
 
     addEventHandler("onClientPreRender", getRootElement(), PreUpdate);
     addEventHandler("onClientRender", getRootElement(), Update);
+
+    triggerServerEvent("requestClientSyncPlayer", localPlayer);
 end
 addEventHandler("onClientResourceStart", resourceRoot, Start);
 
