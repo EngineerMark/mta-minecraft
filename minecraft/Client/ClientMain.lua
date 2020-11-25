@@ -12,8 +12,8 @@ function Start()
     --local test = Vector:create(0, 5);
     --local testChunk = Chunk:create();
 
-    data.gui.inventory = GuiInventory:Create(ScreenResolution);
-    data.gui.inventory.visible = true;
+    data.gui.inventory = GuiInventory:Create(ScreenResolution*0.5);
+    --data.gui.inventory.visible = true;
 
     bindKey(g_bindings["inventory"], "down", function() data.gui.inventory.visible = not data.gui.inventory.visible; end);
 
