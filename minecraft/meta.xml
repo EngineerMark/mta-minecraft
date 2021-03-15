@@ -1,5 +1,5 @@
 <meta>
-  <info name="Minecraft" type="gamemode" author="LeCC" version="1.0" />
+  <info name="Minecraft" type="gamemode" author="LeCC" version="1.0" description="Based on Minecraft Beta 1.1_02" />
 
   <script src="Shared/Math.lua" type="shared" cache="false" />
   <script src="Shared/Vector.lua" type="shared" cache="false" />
@@ -16,6 +16,7 @@
   <script src="Server/ServerMain.lua" type="server" cache="false" />
   <script src="Server/ServerChat.lua" type="server" cache="false" />
 
+  <script src="Client/ClientSettings.lua" type="client" cache="false" />
   <script src="Client/ClientPlayer.lua" type="client" cache="false" />
   <script src="Client/ClientMain.lua" type="client" cache="false" />
   <script src="Client/ClientChat.lua" type="client" cache="false" />
